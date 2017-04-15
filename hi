@@ -1,0 +1,12 @@
+./hi.cpp : \
+  ./projekt/substratum/IInterfacerInterface.aidl \
+  ./projekt/interfacer/services/JobService.aidl
+
+./projekt/substratum/IInterfacerInterface.aidl :
+./projekt/interfacer/services/JobService.aidl :
+
+./include/projekt/substratum/BpInterfacerInterface.h \
+    ./include/projekt/substratum/BnInterfacerInterface.h \
+    ./include/projekt/substratum/IInterfacerInterface.h : \
+    ./projekt/substratum/IInterfacerInterface.aidl \
+    ./projekt/interfacer/services/JobService.aidl
