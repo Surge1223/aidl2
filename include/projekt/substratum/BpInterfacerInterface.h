@@ -22,6 +22,7 @@ virtual ~BpInterfacerInterface() = default;
 ::android::binder::Status applyFonts(const ::android::String16& pid, const ::android::String16& fileName) override;
 ::android::binder::Status applyAudio(const ::android::String16& pid, const ::android::String16& fileName) override;
 ::android::binder::Status enableOverlay(const ::std::vector<::android::String16>& packages, bool restartUi) override;
+::android::binder::Status disableOverlay(const ::std::vector<::android::String16>& packages, bool restartUi) override;
 ::android::binder::Status changePriority(const ::std::vector<::android::String16>& packages, bool restartUi) override;
 ::android::binder::Status copy(const ::android::String16& source, const ::android::String16& destination) override;
 ::android::binder::Status move(const ::android::String16& source, const ::android::String16& destination) override;

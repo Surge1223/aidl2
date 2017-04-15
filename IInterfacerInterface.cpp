@@ -261,6 +261,39 @@ _aidl_status.setFromStatusT(_aidl_ret_status);
 return _aidl_status;
 }
 
+::android::binder::Status BpInterfacerInterface::disableOverlay(const ::std::vector<::android::String16>& packages, bool restartUi) {
+::android::Parcel _aidl_data;
+::android::Parcel _aidl_reply;
+::android::status_t _aidl_ret_status = ::android::OK;
+::android::binder::Status _aidl_status;
+_aidl_ret_status = _aidl_data.writeInterfaceToken(getInterfaceDescriptor());
+if (((_aidl_ret_status) != (::android::OK))) {
+goto _aidl_error;
+}
+_aidl_ret_status = _aidl_data.writeString16Vector(packages);
+if (((_aidl_ret_status) != (::android::OK))) {
+goto _aidl_error;
+}
+_aidl_ret_status = _aidl_data.writeBool(restartUi);
+if (((_aidl_ret_status) != (::android::OK))) {
+goto _aidl_error;
+}
+_aidl_ret_status = remote()->transact(IInterfacerInterface::DISABLEOVERLAY, _aidl_data, &_aidl_reply);
+if (((_aidl_ret_status) != (::android::OK))) {
+goto _aidl_error;
+}
+_aidl_ret_status = _aidl_status.readFromParcel(_aidl_reply);
+if (((_aidl_ret_status) != (::android::OK))) {
+goto _aidl_error;
+}
+if (!_aidl_status.isOk()) {
+return _aidl_status;
+}
+_aidl_error:
+_aidl_status.setFromStatusT(_aidl_ret_status);
+return _aidl_status;
+}
+
 ::android::binder::Status BpInterfacerInterface::changePriority(const ::std::vector<::android::String16>& packages, bool restartUi) {
 ::android::Parcel _aidl_data;
 ::android::Parcel _aidl_reply;
@@ -645,6 +678,32 @@ if (((_aidl_ret_status) != (::android::OK))) {
 break;
 }
 ::android::binder::Status _aidl_status(enableOverlay(in_packages, in_restartUi));
+_aidl_ret_status = _aidl_status.writeToParcel(_aidl_reply);
+if (((_aidl_ret_status) != (::android::OK))) {
+break;
+}
+if (!_aidl_status.isOk()) {
+break;
+}
+}
+break;
+case Call::DISABLEOVERLAY:
+{
+::std::vector<::android::String16> in_packages;
+bool in_restartUi;
+if (!(_aidl_data.checkInterface(this))) {
+_aidl_ret_status = ::android::BAD_TYPE;
+break;
+}
+_aidl_ret_status = _aidl_data.readString16Vector(&in_packages);
+if (((_aidl_ret_status) != (::android::OK))) {
+break;
+}
+_aidl_ret_status = _aidl_data.readBool(&in_restartUi);
+if (((_aidl_ret_status) != (::android::OK))) {
+break;
+}
+::android::binder::Status _aidl_status(disableOverlay(in_packages, in_restartUi));
 _aidl_ret_status = _aidl_status.writeToParcel(_aidl_reply);
 if (((_aidl_ret_status) != (::android::OK))) {
 break;

@@ -23,6 +23,7 @@ virtual ::android::binder::Status applyBootanimation(const ::android::String16& 
 virtual ::android::binder::Status applyFonts(const ::android::String16& pid, const ::android::String16& fileName) = 0;
 virtual ::android::binder::Status applyAudio(const ::android::String16& pid, const ::android::String16& fileName) = 0;
 virtual ::android::binder::Status enableOverlay(const ::std::vector<::android::String16>& packages, bool restartUi) = 0;
+virtual ::android::binder::Status disableOverlay(const ::std::vector<::android::String16>& packages, bool restartUi) = 0;
 virtual ::android::binder::Status changePriority(const ::std::vector<::android::String16>& packages, bool restartUi) = 0;
 virtual ::android::binder::Status copy(const ::android::String16& source, const ::android::String16& destination) = 0;
 virtual ::android::binder::Status move(const ::android::String16& source, const ::android::String16& destination) = 0;
@@ -38,12 +39,13 @@ enum Call {
   APPLYFONTS = ::android::IBinder::FIRST_CALL_TRANSACTION + 5,
   APPLYAUDIO = ::android::IBinder::FIRST_CALL_TRANSACTION + 6,
   ENABLEOVERLAY = ::android::IBinder::FIRST_CALL_TRANSACTION + 7,
-  CHANGEPRIORITY = ::android::IBinder::FIRST_CALL_TRANSACTION + 8,
-  COPY = ::android::IBinder::FIRST_CALL_TRANSACTION + 9,
-  MOVE = ::android::IBinder::FIRST_CALL_TRANSACTION + 10,
-  MKDIR = ::android::IBinder::FIRST_CALL_TRANSACTION + 11,
-  DELETEDIRECTORY = ::android::IBinder::FIRST_CALL_TRANSACTION + 12,
-  APPLYPROFILE = ::android::IBinder::FIRST_CALL_TRANSACTION + 13,
+  DISABLEOVERLAY = ::android::IBinder::FIRST_CALL_TRANSACTION + 8,
+  CHANGEPRIORITY = ::android::IBinder::FIRST_CALL_TRANSACTION + 9,
+  COPY = ::android::IBinder::FIRST_CALL_TRANSACTION + 10,
+  MOVE = ::android::IBinder::FIRST_CALL_TRANSACTION + 11,
+  MKDIR = ::android::IBinder::FIRST_CALL_TRANSACTION + 12,
+  DELETEDIRECTORY = ::android::IBinder::FIRST_CALL_TRANSACTION + 13,
+  APPLYPROFILE = ::android::IBinder::FIRST_CALL_TRANSACTION + 14,
 };
 };  // class IInterfacerInterface
 

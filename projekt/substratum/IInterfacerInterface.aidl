@@ -1,4 +1,3 @@
-
 /*
  * Copyright (c) 2016-2017 Projekt Substratum
  * This file is part of Substratum.
@@ -28,15 +27,6 @@ interface IInterfacerInterface {
      * @param paths Filled in with a list of path names for packages to be installed from.
      */
     void installPackage(in List<String> paths);
-
-
-
-    /**
-     * Disable a specified list of overlays
-     *
-     * @param packages  Filled in with a list of package names to be disabled.
-     * @param restartUi Flag to automatically restart the SystemUI.
-     */
 
     /**
      * Uninstall a list of specified applications
@@ -84,6 +74,14 @@ interface IInterfacerInterface {
      * @param restartUi Flag to automatically restart the SystemUI.
      */
     void enableOverlay(in List<String> packages, boolean restartUi);
+
+    /**
+     * Disable a specified list of overlays
+     *
+     * @param packages  Filled in with a list of package names to be disabled.
+     * @param restartUi Flag to automatically restart the SystemUI.
+     */
+    void disableOverlay(in List<String> packages, boolean restartUi);
 
     /**
      * Change the priority of a specified list of overlays

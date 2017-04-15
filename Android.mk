@@ -14,11 +14,12 @@ common_includes := \
 	frameworks/native/include
 
 include $(CLEAR_VARS)
-TARGET_2ND_ARCH := arm64
+
+
 LOCAL_SRC_FILES:= \
 	IInterfacerInterface.cpp
 
-LOCAL_MODULE:= interfacer
+LOCAL_MODULE:= libinterfacer
 
 LOCAL_AIDL_INCLUDES := \
     frameworks/native/aidl/binder \
